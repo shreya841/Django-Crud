@@ -1,0 +1,189 @@
+
+{% load static %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Website</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #b9b1b1;
+            padding: 10px;
+        }
+        .navbar a {
+            color: rgb(61, 10, 10);
+            padding: 14px 20px;
+            text-decoration: none;
+            text-align: center;
+        }
+        .navbar a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+        .navbar .logo img {
+            height: 40px;
+        }
+        .navbar .search-container {
+            display: flex;
+            gap: 40px;
+            align-items: center;
+        }
+        .navbar .search-container input[type=text] {
+            padding: 6px;
+            margin-right: 10px;
+            border: none;
+        }
+        .navbar .search-container button {
+            padding: 6px;
+            background: #ddd;
+            color: rgb(192, 183, 183);
+            border: none;
+            cursor: pointer;
+        }
+        .navbar .search-container button:hover {
+            background: #ccc;
+        }
+        .footer {
+            background-color: #333;
+            color: white;
+            padding: 20px 10%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        .footer .section {
+            flex: 1;
+            margin: 10px;
+        }
+        .footer h4 {
+            border-bottom: 2px solid #444;
+            padding-bottom: 5px;
+            margin-bottom: 10px;
+        }
+        .footer ul {
+            list-style: none;
+            padding: 0;
+        }
+        .footer ul li {
+            margin: 5px 0;
+        }
+        .footer ul li a {
+            color: white;
+            text-decoration: none;
+        }
+        .footer ul li a:hover {
+            text-decoration: underline;
+        }
+        .footer .footer-bottom {
+            text-align: center;
+            margin-top: 20px;
+            border-top: 1px solid #444;
+            padding-top: 10px;
+        }
+        .navbar .search-container button:hover {
+            background-color: blue;
+        }
+      
+    </style>
+</head>
+<body>
+
+<div class="navbar">
+    <div class="logo">
+        <a href="/"><img src="https://img.freepik.com/premium-vector/cart-shop-logo-icon-design-shopping-cart-illustration-vector-template_487414-1143.jpg" alt="Logo" height="50%"></a>
+    </div>
+    <div class="nav-links">
+        <a href="{% url 'home' %}">Home</a>
+        <a href="{% url 'cart' %}">Products</a>
+        <a href="{% url 'product' %}">Cart</a>
+        <a href="{% url 'bout'}">About</a>
+       
+    </div>
+    <div class="search-container">
+        <form method="get">
+            <input type="text" placeholder="Search.." name="q">
+            <button type="submit">Search</button>
+        </form>
+    </div>
+    <div class="auth-links">
+        <i class="fa fa-heart" style="font-size:20px;"></i>
+
+        &nbsp; &nbsp;<a href="{% url 'registration' %}"><i class="fas fa-user-plus"></i> Register</a>
+        <a href="{% url 'login' %}"><i class="fas fa-sign-in-alt"></i> Login</a>
+    
+    </div>
+</div>
+
+
+<footer>
+    
+    <div class="footer">
+        <div class="section">
+            <h4>ONLINE SHOPPING</h4>
+            <ul>
+            <li><a href="#">Men</a></li>
+            <li><a href="#">Women</a></li>
+            <li><a href="#">Kids</a></li>
+            <li><a href="#">Home & Living</a></li>
+            <li><a href="#">Beauty</a></li>
+            <li><a href="#">Gift Cards</a></li>
+            <li><a href="#">Myntra Insider</a></li>
+        </ul>
+    </div>
+    <div class="section">
+        <h4>USEFUL LINKS</h4>
+        <ul>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Site Map</a></li>
+            <li><a href="#">Corporate Information</a></li>
+            <li><a href="#">Whitehat</a></li>
+            <li><a href="#">Cleartrip</a></li>
+        </ul>
+    </div>
+    <div class="section">
+        <h4>CUSTOMER POLICIES</h4>
+        <ul>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">T&C</a></li>
+            <li><a href="#">Terms Of Use</a></li>
+            <li><a href="#">Track Orders</a></li>
+            <li><a href="#">Shipping</a></li>
+            <li><a href="#">Cancellation</a></li>
+            <li><a href="#">Returns</a></li>
+            <li><a href="#">Privacy policy</a></li>
+            <li><a href="#">Grievance Officer</a></li>
+        </ul>
+    </div>
+    <div class="section">
+        <h4>EXPERIENCE MYNTRA APP ON MOBILE</h4>
+    </div>
+    <div class="section">
+        <h4>KEEP IN TOUCH</h4>
+    </div>
+    <div class="footer-bottom">
+        <p>100% ORIGINAL guarantee for all products at myntra.com</p>
+        <p>Return within 14 days of receiving your order</p>
+        <p>POPULAR SEARCHES: Makeup, Dresses For Girls, T-Shirts, Sandals, Headphones, Babydolls, Blazers For Men, Handbags, Ladies Watches, Bags, Sport Shoes, Reebok Shoes, Puma Shoes, Boxers, Wallets, Tops, Earrings, Fastrack Watches, Kurtis, Nike, Smart Watches, Titan Watches, Designer Blouse, Gowns, Rings, Cricket Shoes, Forever 21, Eye Makeup, Photo Frames, Punjabi Suits, Bikini, Myntra Fashion Show, Lipstick, Saree, Watches, Dresses, Lehenga, Nike Shoes, Goggles, Bras, Suit, Chinos, Shoes, Adidas Shoes, Woodland Shoes, Jewellery, Designers Sarees</p>
+        <p>In case of any concern, <a href="#">Contact Us</a></p>
+        <p>© 2024 www.myntra.com. All rights reserved. A Flipkart company</p>
+        <p>Registered Office Address</p>
+    </div>
+</div>
+</footer>
+
+</body>
+</html>
+
+{% endblock %}

@@ -1,0 +1,477 @@
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clothing Store</title>
+    <style>
+        /* Reset some basic styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    width: 90%;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+header {
+    background-color: #ff1010;
+    color: #fff;
+    padding: 10px 0;
+}
+
+header h1 {
+    display: inline;
+    margin: 0 20px;
+}
+
+header nav {
+    display: inline;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+
+header nav ul li {
+    margin: 0 30px;
+    
+}
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 22px;
+}
+header nav ul li a:hover {
+    color: rgb(0, 123, 255);
+}
+
+main {
+    padding: 20px 0;
+}
+
+main h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.products {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.product-card {
+    background-color: #f4f4f4;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px;
+    width: 30%;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.product-card img {
+    max-width: 100%;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 10px;
+}
+.product-card img {
+    max-width: 100%;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 10px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.product-card:hover img {
+    transform: scale(1.1);
+}
+
+.product-card h3 {
+    margin: 10px 0;
+}
+
+.product-card p {
+    font-size: 1.2em;
+    color: #333;
+}
+
+.product-card button {
+    background-color: #ff0000;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+.product-card button:hover {
+    background-color: #a80c0c;
+}
+
+footer {
+    background-color: #ff0000;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+    .product-card {
+        width: 45%;
+    }
+}
+
+@media (max-width: 480px) {
+    .product-card {
+        width: 100%;
+    }
+
+    header h1 {
+        display: block;
+        text-align: center;
+    }
+
+    header nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    header nav ul li {
+        margin: 5px 0;
+    }
+}
+body {
+            font-family: Arial, sans-serif;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #b9b1b1;
+            padding: 10px;
+        }
+        .navbar a {
+            color: rgb(61, 10, 10);
+            padding: 14px 20px;
+            text-decoration: none;
+            text-align: center;
+        }
+        .navbar a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+        .navbar .logo img {
+            height: 40px;
+        }
+        .navbar .search-container {
+            display: flex;
+            gap: 40px;
+            align-items: center;
+        }
+        .navbar .search-container input[type=text] {
+            padding: 6px;
+            margin-right: 10px;
+            border: none;
+        }
+        .navbar .search-container button {
+            padding: 6px;
+            background: #ddd;
+            color: rgb(192, 183, 183);
+            border: none;
+            cursor: pointer;
+        }
+        .navbar .search-container button:hover {
+            background: #ccc;
+        }
+        .footer {
+            background-color: #f0e7e7;
+            color: rgb(14, 4, 4);
+            padding: 20px 10%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        .footer .section {
+            flex: 1;
+            margin: 10px;
+        }
+        .footer h4 {
+            border-bottom: 2px solid #444;
+            padding-bottom: 5px;
+            margin-bottom: 10px;
+        }
+        .footer ul {
+            list-style: none;
+            padding: 0;
+        }
+        .footer ul li {
+            margin: 5px 0;
+        }
+        .footer ul li a {
+            color: rgb(14, 11, 11);
+            text-decoration: none;
+        }
+        .footer ul li a:hover {
+            text-decoration: underline;
+        }
+        .footer .footer-bottom {
+            text-align: center;
+            margin-top: 20px;
+            border-top: 1px solid #444;
+            padding-top: 10px;
+        }
+        .navbar .search-container button:hover {
+            background-color: blue;
+        }
+       
+        .circle{
+            background-color: white; 
+    border-radius: 10px; 
+        background-color: rgb(243, 243, 252);
+        box-shadow: 0 0 30px rgba(59, 54, 54, 0.5);
+        height: 200px;
+        display: flex;
+            gap: 30px;
+        }
+        .hed img{
+            
+            height: 150px;
+            border-radius: 50%;
+        }
+      
+    </style>
+</head>
+<body>
+
+<div class="navbar">
+    <div class="logo">
+        <a href="/"><img src="https://img.freepik.com/premium-vector/cart-shop-logo-icon-design-shopping-cart-illustration-vector-template_487414-1143.jpg" alt="Logo" height="50%"></a>
+    </div>
+    <div class="nav-links">
+        <a href="{% url 'home' %}">Home</a>
+        <a href="{% url 'product' %}">Product</a>
+        <a href="{% url 'cart' %}">Cart</a>
+        <a href="{% url 'bout'}">About</a>
+       
+    </div>
+    <div class="search-container">
+        <form method="get">
+            <input type="text" placeholder="Search.." name="q">
+            <button type="submit">Search</button>
+        </form>
+    </div>
+    <div class="auth-links">
+        <i class="fa fa-heart" style="font-size:20px;"></i>
+
+        &nbsp; &nbsp;<a href="{% url 'registration' %}"><i class="fas fa-user-plus"></i> Register</a>
+        <a href="{% url 'login' %}"><i class="fas fa-sign-in-alt"></i> Login</a>
+    
+    </div>
+</div>
+
+   
+<div class="circle">
+<div class="hed">
+    <img src="https://5.imimg.com/data5/HV/CR/MY-59326126/ladies-tops-500x500.jpg" alt="">
+    <br>
+    &nbsp; &nbsp;<h4>One-piece</h4>
+</div>
+<div class="hed">
+    <img src="https://evilato.com/wp-content/uploads/2023/05/IMG-20230501-WA0009.jpg" alt="">
+    <br>
+    &nbsp; &nbsp;<h4>heavy-party-wear</h4>
+</div>
+
+<div class="hed">
+    <img src="https://assets.ajio.com/medias/sys_master/root/20230505/BN9W/645525d842f9e729d76a6d8d/-473Wx593H-466129020-red-MODEL.jpg" alt="">
+    <br>
+    &nbsp; &nbsp;<h4>heavy-party-wear</h4>
+</div>
+<div class="hed">
+    <img src="https://www.jiomart.com/images/product/original/rvgnulbsoj/iloz-cut-glass-green-leather-strap-ladies-analog-girls-watch-analog-watch-for-women-new-collection-stylish-latest-designer-black-fashion-wrist-watch-women-analog-watch-for-women-product-images-rvgnulbsoj-0-202303020738.jpg?im=Resize=(1000,1000)" alt="">
+    <br>
+    &nbsp; &nbsp;<h4>heavy-party-wear</h4>
+</div><div class="hed">
+    <img src="https://shopforwomen.co.in/cdn/shop/files/3_fbd4acf1-6aaf-4e87-aeed-2b1959b8a5c2.jpg?v=1697533917" alt="">
+    <br>
+    &nbsp; &nbsp;<h4>heavy-party-wear</h4>
+</div>
+<div class="hed">
+    <img src="https://rukminim2.flixcart.com/image/850/1000/xif0q/sandal/t/c/t/ft-501-fashion-tails-black-original-imafwyfy9sznkdxq-bb.jpeg?q=90&crop=false" alt="">
+    <br>
+    &nbsp; &nbsp;<h4>heavy-party-wear</h4>
+</div>
+<div class="hed">
+    <img src="https://adn-static1.nykaa.com/nykdesignstudio-images/pub/media/catalog/product/0/a/0a0355aIGSO002_1.jpg?rnd=20200526195200&tr=w-512" alt="">
+    <br>
+    &nbsp; &nbsp;<h4>heavy-party-wear</h4>
+</div>
+<div class="hed">
+    <img src="https://secrettemptation.in/cdn/shop/products/ADORE_PERFUMEE_f5a7dfd5-ab65-467e-9fa2-f5e53ca6d18d.jpg?v=1670410712" alt="">
+    <br>
+    &nbsp; &nbsp;<h4>heavy-party-wear</h4>
+</div>
+
+</div>
+  
+
+    <main class="container">
+        <h2>Our Products</h2>
+        <div class="products">
+            <div class="product-card">
+                <img src="https://dhartibandhani.com/cdn/shop/products/WhatsAppImage2023-04-21at9.30.17AM.jpg?v=1682057792&width=1445" alt="Product 1">
+                <h3>Amazon Brand - Elegent Anarkali kurti for Women| Cotton Kurtis| Kurtis for Women</h3>
+                <p>399/- RS</p>
+                <button>Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="https://www.aachho.com/cdn/shop/products/57_1_0fd2558b-8d1c-47f6-a06f-b285bb419ca2_400x.png?v=1684510566" alt="Product 2" height="500px">
+                <h3>Amazon Brand - Designer sharara for Women| Cotton Kurtis| Kurtis for Women</h3>
+                <p>399/- RS</p>
+                <button>Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="https://tiimg.tistatic.com/fp/1/007/909/printed-comfortable-breathable-knee-length-sleeveless-ladies-kurtis-542.jpg" alt="Product 3"  height="500px">
+                <h3>Amazon Brand - Myx Women's Cotton A-Line Short Kurti</h3>
+                <p>349/-RS</p>
+                <button>Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="https://m.media-amazon.com/images/I/71H4vKvP-fL._SX569_.jpg" alt="Product 4">
+                <h3>Symbol Premium Women's Skinny 4-Way Stretch Jeans (Mid Rise | Ankle Length | Desk-to-Dinner)</h3>
+                <p>1699/-RS</p>
+                <button>Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="https://m.media-amazon.com/images/I/61UM-lzsBsL._SY741_.jpg" alt="Product 5">
+                <h3>VERO MODA Women JeansAmazon Brand - Myx Women's Cotton A-Line Short Kurti</h3>
+                <p>1136/-RS</p>
+                <button>Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="https://m.media-amazon.com/images/I/61VvVI-Ct8L._SY879_.jpg" alt="Product 6">
+                <h3>VERO MODA Women Jeans</h3>
+                <p>1199/-RS</p>
+                <button>Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="https://images-cdn.ubuy.co.in/6353a8f5a540837468765f3d-smarat-sleeveless-round-neck-dress-women.jpg" alt="Product 7" height="500px">
+                <h3>VERO MODA Women Jeans</h3>
+                <p>1199/-RS</p>
+                <button>Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="https://www.dynamiteclothing.com/dw/image/v2/BDRP_PRD/on/demandware.static/-/Sites-root_dynamite_catalog/default/dw7a17f17f/images/100088719/100088719_6Q1_1920x2880.jpg?sw=320&sh=480" alt="Product 8" height="500px">
+                <h3>VERO MODA Women Jeans</h3>
+                <p>1199/-RS</p>
+                <button>Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvTj6ARvM8UeF8KzS_3_uRTsuUcWohxkSEVAlIaQCdknCYfYoK8nvVE67fmqI7zzjgFjo&usqp=CAU" alt="Product 9" height="500px">
+                <h3>VERO MODA Women Jeans</h3>
+                <p>1199/-RS</p>
+                <button>Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="https://m.media-amazon.com/images/I/71qywlqnYkL._AC_UY1000_.jpg" alt="Product 9" height="500px">
+                <h3>CrossBody beg for women</h3>
+                <del>2345/-RS</del>
+                <p>1199/-RS</p>
+                <button>Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="https://www.jiomart.com/images/product/original/rvqsgelrwj/iloz-new-rose-gold-color-designer-dial-stylish-luxury-magnet-strap-watch-for-girls-watches-for-women-stylish-new-fashion-latest-new-branded-girls-magnet-strap-analog-watch-for-women-product-images-rvqsgelrwj-0-202211300517.jpg?im=Resize=(500,630)" alt="Product 9" height="500px">
+                <h3>VERO MODA Women Jeans</h3>
+                <p>1199/-RS</p>
+                <button>Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="https://images-static.nykaa.com/uploads/4716df96-20d8-4422-ae5d-e845d9ceea62.jpg?tr=w-300,cm-pad_resize" alt="Product 9" height="500px">
+                <h3>Hott Women High Heels</h3>
+                <p>1199/-RS</p>
+                <button>Add to Cart</button>
+            </div>
+            
+        </div>
+    </main>
+
+  <footer>
+    <div class="footer">
+        <div class="section">
+            <h4>ONLINE SHOPPING</h4>
+            <ul>
+            <li><a href="#">Men</a></li>
+            <li><a href="#">Women</a></li>
+            <li><a href="#">Kids</a></li>
+            <li><a href="#">Home & Living</a></li>
+            <li><a href="#">Beauty</a></li>
+            <li><a href="#">Gift Cards</a></li>
+            <li><a href="#">Myntra Insider</a></li>
+        </ul>
+    </div>
+    <div class="section">
+        <h4>USEFUL LINKS</h4>
+        <ul>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Site Map</a></li>
+            <li><a href="#">Corporate Information</a></li>
+            <li><a href="#">Whitehat</a></li>
+            <li><a href="#">Cleartrip</a></li>
+        </ul>
+    </div>
+    <div class="section">
+        <h4>CUSTOMER POLICIES</h4>
+        <ul>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">T&C</a></li>
+            <li><a href="#">Terms Of Use</a></li>
+            <li><a href="#">Track Orders</a></li>
+            <li><a href="#">Shipping</a></li>
+            <li><a href="#">Cancellation</a></li>
+            <li><a href="#">Returns</a></li>
+            <li><a href="#">Privacy policy</a></li>
+            <li><a href="#">Grievance Officer</a></li>
+        </ul>
+    </div>
+    <div class="section">
+        <h4>EXPERIENCE MYNTRA APP ON MOBILE</h4>
+    </div>
+    <div class="section">
+        <h4>KEEP IN TOUCH</h4>
+    </div>
+    <div class="footer-bottom">
+        <p>100% ORIGINAL guarantee for all products at myntra.com</p>
+        <p>Return within 14 days of receiving your order</p>
+        <p>POPULAR SEARCHES: Makeup, Dresses For Girls, T-Shirts, Sandals, Headphones, Babydolls, Blazers For Men, Handbags, Ladies Watches, Bags, Sport Shoes, Reebok Shoes, Puma Shoes, Boxers, Wallets, Tops, Earrings, Fastrack Watches, Kurtis, Nike, Smart Watches, Titan Watches, Designer Blouse, Gowns, Rings, Cricket Shoes, Forever 21, Eye Makeup, Photo Frames, Punjabi Suits, Bikini, Myntra Fashion Show, Lipstick, Saree, Watches, Dresses, Lehenga, Nike Shoes, Goggles, Bras, Suit, Chinos, Shoes, Adidas Shoes, Woodland Shoes, Jewellery, Designers Sarees</p>
+        <p>In case of any concern, <a href="#">Contact Us</a></p>
+        <p>© 2024 www.myntra.com. All rights reserved. A Flipkart company</p>
+        <p>Registered Office Address</p>
+    </div>
+</div>
+  </footer>
+</body>
+</html>
+{% endblock %}

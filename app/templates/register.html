@@ -1,0 +1,105 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+    <style>
+        body {
+            background: linear-gradient(45deg, #45708d, #6e5773, #45708d, #6e5773);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+        }
+        
+        @keyframes gradientBG {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+        
+        #frm {
+            padding: 60px;
+            border: 1px solid;
+            width: 30%;
+            height: auto;
+            background-color: rgba(209, 205, 205, 0.8);
+            border-radius: 10px;
+            margin-top: 50px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        #frm input {
+            border-radius: 5px;
+            height: 30px;
+            width: 350px;
+            background-color: rgba(255, 255, 255, 0.5);
+            color: #333;
+            border: none;
+            padding: 5px;
+            margin-bottom: 10px;
+        }
+        
+        ::placeholder {
+            text-align: center;
+            color: #333;
+        }
+        
+        #frm button {
+            width: 170px;
+            padding: 10px;
+            background-color: #45708d;
+            color: white;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+        
+        #frm button:hover {
+            background-color: #6e5773;
+        }
+        
+        #frm a {
+            color: #333;
+            text-decoration: none;
+            font-size: 16px;
+            margin-top: 10px;
+            display: block;
+            text-align: center;
+        }
+        
+        #frm a:hover {
+            color: #45708d;
+        }
+    </style>
+</head>
+
+<body>
+    <center>
+        <div id="frm">
+            <form action="{% url 'registerdata' %}" method="post">
+                {% csrf_token %}
+                <input type="text" name="Name" placeholder="Name"> <br> <br>
+                <input type="email" name="Email" placeholder="Email"> <br> <br>
+                <input type="text" name="Contact" placeholder="Contact"> <br> <br>
+                <input type="password" name="Password" placeholder="Password"> <br> <br>
+                <input type="password" name="Cpassword" placeholder="Confirm Password"> <br> <br>
+                <button type="submit">Submit</button>
+            </form>
+            <a href="{% url 'login' %}">Login</a>
+        </div>
+    </center>
+</body>
+
+</html>
+
+{% endblock %}

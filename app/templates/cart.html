@@ -1,0 +1,476 @@
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Website</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #b9b1b1;
+            padding: 10px;
+        }
+        .navbar a {
+            color: rgb(61, 10, 10);
+            padding: 14px 20px;
+            text-decoration: none;
+            text-align: center;
+        }
+        .navbar a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+        .navbar .logo img {
+            height: 40px;
+        }
+        .navbar .search-container {
+            display: flex;
+            gap: 40px;
+            align-items: center;
+        }
+        .navbar .search-container input[type=text] {
+            padding: 6px;
+            margin-right: 10px;
+            border: none;
+        }
+        .navbar .search-container button {
+            padding: 6px;
+            background: #ddd;
+            color: rgb(192, 183, 183);
+            border: none;
+            cursor: pointer;
+        }
+        .navbar .search-container button:hover {
+            background: #ccc;
+        }
+        .footer {
+            background-color: #333;
+            color: white;
+            padding: 20px 10%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        .footer .section {
+            flex: 1;
+            margin: 10px;
+        }
+        .footer h4 {
+            border-bottom: 2px solid #444;
+            padding-bottom: 5px;
+            margin-bottom: 10px;
+        }
+        .footer ul {
+            list-style: none;
+            padding: 0;
+        }
+        .footer ul li {
+            margin: 5px 0;
+        }
+        .footer ul li a {
+            color: white;
+            text-decoration: none;
+        }
+        .footer ul li a:hover {
+            text-decoration: underline;
+        }
+        .footer .footer-bottom {
+            text-align: center;
+            margin-top: 20px;
+            border-top: 1px solid #444;
+            padding-top: 10px;
+        }
+        .navbar .search-container button:hover {
+            background-color: blue;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Poppins", sans-serif;
+        }
+
+        body {
+            max-width: 100%;
+            align-items: center;
+            display: grid;
+        }
+        .navbar {
+            display: flex;
+            align-items: center;
+            padding: 20px;
+        }
+        nav {
+            flex: 1;
+            text-align: right;
+        }
+        nav ul {
+            display: inline-block;
+            list-style-type: none;
+        }
+        nav ul li {
+            display: inline-block;
+            margin-right: 20px;
+        }
+        a {
+            text-decoration: none;
+            color: black;
+        }
+        p {
+            color: black;
+        }
+        .container {
+            max-width: 100%;
+            margin: auto;
+            padding-left: 45px;
+            padding-right: 25px;
+        }
+        .row {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+        .c2 {
+            flex-basis: 50%;
+            min-width: 300px;
+        }
+        .c2 img {
+            max-width: 100%;
+            padding: 50px;
+        }
+        .c2 h1 {
+            font-size: 50px;
+            line-height: 60px;
+            margin: 35px 0;
+        }
+
+        .header {
+            background: radial-gradient(#fff, #ffd6d6);
+        }
+        .header .row {
+            margin-top: 70px;
+        }
+        .cat {
+            margin: 70px 0;
+        }
+        .c3 {
+            flex-basis: 30%;
+            min-width: 250px;
+            margin-bottom: 30px;
+        }
+        .c3 img {
+            width: 100%;
+        }
+        .scat {
+            max-width: 1080px;
+            margin: auto;
+        }
+
+        .container5 {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+            display: grid;
+        }
+
+        .cart {
+            background-color: #fff;
+            border-radius: 5px;
+            padding: 20px;
+            margin-bottom: 20px;
+            display: grid;
+        }
+
+        .cart-item {
+            border-bottom: 1px solid #ccc;
+            padding: 10px 0;
+            display: flex;
+            align-items: center;
+        }
+
+        .cart-item img {
+            width: 80px;
+            height: 80px;
+            margin-right: 20px;
+        }
+
+        .cart-item-details {
+            flex: 1;
+            flex-direction: column-reverse;
+        }
+
+        .cart-item-name {
+            font-size: 18px;
+            margin-bottom: 5px;
+            margin-left: 200px;
+        }
+
+        .cart-item-price {
+            font-size: 16px;
+            color: #007bff;
+            margin-left: 200px;
+        }
+
+        .fa-solid.fa-trash {
+            display: flex;
+            margin-left: 280px;
+        }
+        .cart-total {
+            text-align: right;
+            font-size: 20px;
+            margin-top: 20px;
+            margin-left: 180px;
+        }
+
+        .checkout-btn {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        .checkout-btn:hover {
+            background-color: #0056b3;
+        }
+
+        .footer {
+            background-color: brown;
+        }
+        .foot {
+            width: 100%;
+            padding: 70px 30px 20px;
+        }
+        .icon {
+            display: flex;
+            justify-content: center;
+        }
+        .icon a {
+            text-decoration: none;
+            padding: 10px;
+            background-color: wheat;
+            margin: 10px;
+            border-radius: 50%;
+        }
+        .icon a i {
+            font-size: 2em;
+            color: black;
+            opacity: 0.9;
+        }
+        .icon a:hover {
+            background-color: #ff523b;
+            transition: 0.5s;
+        }
+        .icon a:hover i {
+            background-color: black;
+            transition: 0.5s;
+        }
+        .foot {
+            background: radial-gradient(#fff, #ffd6d6);
+        }
+        .footnav {
+            margin: 30px 0px;
+        }
+        .footnav ul {
+            display: flex;
+            justify-content: center;
+            list-style-type: none;
+        }
+        .footnav ul li a {
+            color: black;
+            margin: 20px;
+            text-decoration: none;
+            font-size: 1.3em;
+            opacity: 0.7;
+            transition: 0.5s;
+        }
+        .footnav ul li a:hover {
+            color: #ff523b;
+            opacity: 1;
+        }
+        .footbottom {
+            background: radial-gradient(#fff, #ffd6d6);
+            padding: 20px;
+            text-align: center;
+        }
+        .footbottom p {
+            color: black;
+        }
+        .design {
+            opacity: 0.7;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 400;
+            margin: 0px 5px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="navbar">
+    <div class="logo">
+        <a href="/"><img src="https://img.freepik.com/premium-vector/cart-shop-logo-icon-design-shopping-cart-illustration-vector-template_487414-1143.jpg" alt="Logo" height="50%"></a>
+    </div>
+    <div class="nav-links">
+        <a href="{% url 'home' %}">Home</a>
+        <a href="{% url 'product' %}">Products</a>
+        <a href="{% url 'cart' %}">Cart</a>
+        <a href="{% url 'about' %}">About</a>
+    </div>
+    <div class="search-container">
+        <form method="get">
+            <input type="text" placeholder="Search.." name="q">
+            <button type="submit">Search</button>
+        </form>
+    </div>
+    <div class="auth-links">
+        <i class="fa fa-heart" style="font-size:20px;"></i>
+        &nbsp; &nbsp;<a href="{% url 'registration' %}"><i class="fas fa-user-plus"></i> Register</a>
+        <a href="{% url 'login' %}"><i class="fas fa-sign-in-alt"></i> Login</a>
+    </div>
+</div>
+
+<div class="container5">
+    <div class="cart">
+        <div class="cart-item">
+            <img src="https://www.titan.co.in/dw/image/v2/BKDD_PRD/on/demandware.static/-/Sites-titan-master-catalog/default/dw6c9df22a/images/Titan/Catalog/2656WM01_1.jpg?sw=800&sh=800" alt="">
+            <div class="cart-item-details">
+                <div class="cart-item-name">WOMEN WATCHES</div>
+                <div class="cart-item-price">$890.00</div>
+            </div>
+            <i class="fa-solid fa-trash"></i>
+        </div>
+        <div class="cart-item">
+            <img src="https://www.arthursjewelers.com/content/images/thumbs/Original/31-V677Y-L-19361782.jpg" alt="Product Image">
+            <div class="cart-item-details">
+                <div class="cart-item-name">WOMEN RING</div>
+                <div class="cart-item-price">$5000.00</div>
+            </div>
+            <i class="fa-solid fa-trash"></i>
+        </div>
+        <div class="cart-item">
+            <img src="https://th.bing.com/th/id/OIP.Ejvu7V-225PP--5QCwBNXwHaHa?rs=1&pid=ImgDetMain" alt="Product Image">
+            <div class="cart-item-details">
+                <div class="cart-item-name">WOMEN NECKPIECE</div>
+                <div class="cart-item-price">$19999.00</div>
+            </div>
+            <i class="fa-solid fa-trash"></i>
+        </div>
+        <div class="cart-item">
+            <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxAQEA8QDxAVFRAQFRcVDxUVGBUVFRUVFxUWFhUXFRUYHSggGBolHRUYITEhJSkrLi4uFx8zODMtNygtLisBCgoKDg0OFxAQGisiHR0tLS0tLTc3Ky0tLzUtLy8tLS0tLy0tKy4rKysvLS0rLSsvMi0tLS0rLS0tKystKy0tLf/AABEIAOEA4QMBIgACEQEDEQH/xAAbAAACAwEBAQAAAAAAAAAAAAAAAQIDBAUGB//EAD4QAAIBAgMEBwUFBwQDAAAAAAABAgMRBBIhBTFBURMiYXGBkbEGMqHB8EJSctHhFCNigpKywjNTo9JEg6L/xAAZAQADAQEBAAAAAAAAAAAAAAAAAQIEAwX/xAAuEQEAAgEDAwEHAgcAAAAAAAAAARECAxIhBDFBcSJRUmGh0fATsQUjQmKRwfH/2gAMAwEAAhEDEQA/APsQgEcWQCGIABAICAAICAgEBATAQEBDEAJsQyEqkVpmV+/UZJCZHpFzFnXMdDbPuSExZkJy4eugUUxJiATEkMQCAgACAgIBADAQATriAQmsAAgICAQEBAICAAJgRAAgAEwZXVelk9/nbs7W2ku2SHAiLmmTHV6rl0NBLpWrylP/AE6UHpnmlrJtpqMFvs29FrCGwoKKz1q8p8Z57K/HLTXVguxLQ1VMVCm68Ur1Ix6aruSd7pJN8Eo5V2IMDiuli5Wy2Sb1c96vvimno+B0r3O8XEViqp7LhFWVSr4yT431vGzLqVBx3VZ9nVofKlchQxTmrxhL7VtGk1FpaOSSerLac8yT1V0nZ79eZNzCMs847qcTs+NWSlUqVG1u1il5KNhTwkYThKLlq7NNqztGb3JJeO/RGuJDE74LleXjbL/kxxPA3zMTaJEYiGYCAQEBDEAAgEMgAABOsACJawIBAQABAQEAmADEAgICYMQyBdRpqyk+fwX66/yopNCdoQ55U33vV+o4Xh5lysXTUp4q+6VGMX3NzueCx/tPicHpCq4wvdpRg977Uz6DWjrWfOMP7pHzbb1GLqQUlo2rnn9bq7NTC5mvNTT1Ojw3YZVEXw+gey+KdakpuTaccyukrOVnLcuw04KeanTl96KfmrlHs0oqklHRKKSXJWLNlO9Gl+BLyVjv0uU5aVzN8svWxWdejdTRVXfWfZZfN/F28DRB5U5cuHPkvF6GP14vm+LNXhjy4x9QIAJcgIBAQEAhkBMBARgIAJ1xABLWBAIABAAEQgACAmAhkQAJgSFX3Zdz9DZiHqzKyOJxsVdyU1ztCU7f0JlR2XjcxNOXtHN0dRy1/etQdlfKnJWeu5W7OOnF+I9o6jVSkk7LLDd2xTZ7LaO18M4SpdLHpHOTjF3TazSs9VuaPD+0sk6kG3ZJRXlFLf4HkddGc6ns34e30lRhz83qdiU4ydJZXJPfmfV77cWdzZMFGVaEdIQklGPCKte0V9ldi0PKbE2xRp9HKVSNo6yV1fS70XFnd2BtLpJYqpTpzkpVF0bcZKDVt8pbkle9r3fBXNH8PjLblutn66LmK93+3fxUrWj4y+S+fijMGvF3b1b5viwN0vIzyueAIBCQBDEMiABMCJgAgIAAgDsCAGS1kxDEBATBiAgIBMZBiAQEBFEMRnnKlRjnqQ/1LO0KfFKpPg/4VeWt7W1L6mxJSV6+JlGPGNL91G3bP3/FNdw4i146eWQsJo5O1PZ7ZeV9JTq1XwfSVXf/ANk5KPmzyOI9mKjzunkjSndUlKveUdN+agmp662a47+JWw50q8vXY7GUrOCqQzK94qSbT43S1PD7SxUFVs5JPtZmxPstWhTjShiZKb1nKHS1nwslGcaSS04yfxZ53avsrXjVSr1cZOTV4vJTjdcGk6zy630Rgy/huOXfKW/Hr8sY7Q+u7BxVKME5VYJW3uSS82zsurCfWpyjKPOLTXmj49hfZvFUmputj1bhKMal/wDkXqdnFUadSEFSdajWXvyqU6tRt8HHoq1TKuyzO+j0cac3EuGv1U6vszFPo1gseX2dhdlWzYmtXq1mlnlUqVo624Rcadl/KdWnhtkb4wT76kG//qdzRsZv0Y+J0rCOROnsy+mbwnQ08pozbTjS6NywbtJOzdWTyeDp1LthsTOlERdu+I8rs3ZmMqQdTC4ynUq0ld4dqeWpa2aMa/Stp62TlFq/2bHpcNXVSnTnG9pxjKzWWSbV3GUeEk9GuaFMUjLTmI3eFjEAhOQEwYgIxAAB2GIBEtYEwEBAQAwBMQAxkDNGjUxMnTpycKUXatVXvN8adJ8Jc5cNy192yUZVJKlTdpNXnJfYhuv+J7l4vWzI7RxSSWFw3VjFZZtcP4U+fNl442vDGO89kq206OGisPhKcXk009yL3u7WspPe+Lbu+J5/bGG2hWyzpV7TXB9W34OEX8e3n2sNhIwSstfrcaInaMVZ53FPCU9j7RUm50Yyb4upF+Wu/jfedXDU8dH/AMGi/wAUs390j1KJJhtce3n9vs4dLaG1Iq0cJRS7GvlI4+1sPtKvWp1Z0IZoJKNpJR0lfVNviz2uYpqS6y8P8n8kFFlMzFTMuO9rbX44ek/Ff9yirjNoz9/BUJd6j65j0DkJyHtKcsvin6fZ5mcsY9+Apf1NekyMoYl6PZ9JrtnJ/wCZ6dyIuQbUXl8U/T7PO0pYiDvHZtBPwfqzStqbRStDCUY9lor/ACR2M5CUg2jdl8U/T7MXsqsU8TUniVBSnHNljbTL1U246L3nu3mrE0claqlul1vGU5yl5uTDYNTNWxE+SjFeb/6rzL8e7z8Pmznm7X/JZgYMRyZwIBMCAyIwJ1wARLWQAIABAIZArr1VCLk9eSW9tu0YrtbaS7yZVQadSVSX+nh93bVa+OVNLvnzQ8YuREXNDE1nhqWVWeJru8nwTt/bFKy7m99yrBYZU4rm974kKKdScq01q/cXKPC3l6GibNERSs8/EJNiiyvMPMU5TktUgzlWcg5gmcl7qFCn1m/rh+pCdQqpT3vn9P4tjRObS5izmeUgdQE71+ci5lGci5gW9ozldWdk3yKs5RjqloS7gTObV7OytTnL7035JJetzVXld37PmznYCeWjBc7vzbfzNr+S9EctTs7RneNEIBHFIEDACACAA7AgES1gTYMQyAhkQJXiKjjFuKvLdBc5N2ivNornTSUKCd401eo/vTlq2/Ft/wAxamsznL3aMXJ97TS8lm80ZcE24uUvek2338Ttpwcztj1am7FTmKcylyOrhOTTTpXWZyUVwvx7hThqkmpX5fqRp1+qk4Zkm8u9Wvv1RcoKNSna6UrOz3pvgc5ymJm/m6RGOURXy9//ABGWGlqk4tr7KeuhRTpuSbTSS3tuyLpYmMJt9E80W/tP0M7f7h2/3FfsWUmMs69aLKML48X7/HrCGJptZVmi8zto7jq4eUF1nG63q+vkZMPLNVh2Sj6/XkWbQl+8qfil62L9rdEW4TljsnKvkuWFm0mktdybSb7kyeBi5dJG2uSSs+d0PaFSkqnWz3SjZxcbWsrWuVU8SqjxM4rfTbS8kct+eWPr+e/l026eGdRPMX+0/Lj6s9ZSi8slZrx9CvOZ84ZzTF+WCc4vhozmPaFXq25k3UMWJqXkl5jTOboRfuQ/DH5HWk9W+04ezpZq0ey8vJfmdo46vhp0JvGZMixsRxdQIBMCMCIAHYBgITWQAICAgIVFdW+9p56DDNjp2oJca0r/AMu9fBRXiKGkUuwq2pVzVoR4Qju73r6JjlM04w46ufJzkVykQlMg5Fs05tMcXUjFZajy3aSXZv8AUqqOWdXleTtvvxM06nDh9fkVyxDvfjzJ282U6vFTbp1cZWjH33xVt+7Tl9WMk606L0nlcvl2Na/HeZKmJbWstNPgvyKukzNyfMUacdqgsteZm7njty6c61SclGU05Qej0Vnfg7LjZeRRUblmm2r3vLtbfBJFEcQ7tpu73tacblcqr1137/iOMa7Iz1d3eZn84boY6qlGKs1bqZlF2SbW97loymlWqqopQtmndpK2VrW6tuto9OwzdM1lfJWXc2278978yEsQ7p6KyaSW5Jpp+rFsjmojkp15mrmeFuJr5pXcYxuk7RVl32KXMjXrubzPfu/XvKZSLjiGfPO5mVspmRz61yU5GfNxFKLdrYEbyqT5JRXjq/7fidlmDYlLLRjzneT8dF8F8TcZ85uXp6ONYQBAIh0DEAAQABATsCAQmsCAABEHLrLsu/HcvV+RIpcutLwXz+ZeEcpmXLqVM2Im+Vrf0pP4otmzFhJZqtWX8UvjK6Nc2aYYs8lc2UymOrMolIbPMpuZTOYpSM9afBbxomRUqXdhqZQ9Ct1Ac5lsUxqRjVQsVQCtfKRW5EcxFyEUyk5FbmJsg2JNiciNOm5yjBb5NJeLISZ0/Z/D5qkpvdBWXe/0v8CcpXp47soh6GCSSS3JJLuWi+AwEZnrATBiAgJgxARiAQB2SLGxCawJgxAQOe6qzzXFJPzcl/ibzzccRevVtwyr4X+Z10u7lq5VCnZE7qb5s2VKhzdkT6r7/wAzTVmaIYMshOoVymUzqFM6thuMyuqVbCw+W8s9tYu2bNa+lruOpmg22ub0Q5Qly37vO3qyMuYqxjMxNxFtVR4e0tdczy+9fLeFtb23OWjV+4UqeH6SazJQtanZyfWbdpPV6K2vejnuEmr8LN+CevqiPQz004J8OOiOez+6XT9W/wCiP8fn5Da+g6PRvpckXv6ubNHNbts3pwy9pQpFSozva2u7hyv6Mm4yik2rJ7vJfmXjUebtx1Ly521S24XK1MbkW5G2VTY2ymUrsmRR3PV7Kw/R0op73rLvf0l4Hn9k4bpKq+7DV/JfXJnqzlnPht6XCvaAmDEcmsAAgIgAQwAABE64mAmJrAgACRm9GeQwsr1qz/i/T5Hraz6su5+h4jBVf3lbtk/7mdtJm6iaiE9lz0f1xZfVmc3p+hnJNaPdwuiurtK+5L1O1sWVy11atirNxZgeIk91/Ig5TfBitG1vlMg6i5mFxkHRy7AtNNjrdvZv4EFPtMvRPmgVJ8wKm2NTtJqe7U56py5odpBZU6CkTUjnqU+0si5sLLa0VKnBEdwoK3edHYuE6Spmfux9fr5EzK8MN01DtbHwnR01f3pay/I3MBHCZt6URERUAAExACAQwAYCAgAAAdZiGIlqAgYgJGqrxkuafofOsPVy1JJ8W/U+jHifaTY1SNWVSlFuE+tpwfHuOmnNM/UYzMRSupUTXAz9JHgvgYeinxXxQnTl2eZ2tjnFoqVCrOVOlP6YuhqcgtG1Y5BmK/2er91j/Zav3H5CstkpZwzkf2Ot9yXkw/Yq/wDty8mFjZKWckpkP2Ot9yXkw/ZKv3JeTCy2SujNE1IzrD1Pusshh5v7LCxslopRc5KMd7PYYDCqlBRW/ic7YGzXBZ5pqT3J70dlnLPK+GvR09sXPcMQAQ7kIAAgIBDICAAIAAAHWEwYiWsCAAICAQEdxXEICO4rgRYyO4rgICFxXAQELiuAgAuK4CYEBAAEBAICAgEMgxDEBAQCAGAgAnXYmAEtZAIAICAABCABkTEAARCYABEAABIgAARCAAIgYgAiAQAAJjAZIsAACJiAAIAAAH//2Q==" alt="Product Image">
+            <div class="cart-item-details">
+                <div class="cart-item-name">WOMEN PERFUME</div>
+                <div class="cart-item-price">$209.00</div>
+            </div>
+            <i class="fa-solid fa-trash"></i>
+        </div>
+        <div class="cart-total">
+            Total: $26,098.00
+        </div>
+        <button class="checkout-btn">BUY NOW</button>
+    </div>
+</div>
+
+<footer>
+    <div class="foot">
+        <div class="icon">
+            <a><i class="fa-brands fa-facebook"></i></a>
+            <a><i class="fa-brands fa-instagram"></i></a>
+            <a><i class="fa-brands fa-twitter"></i></a>
+            <a><i class="fa-brands fa-google-plus"></i></a>
+            <a><i class="fa-brands fa-youtube"></i></a>
+        </div>
+        <div class="footnav">
+            <ul>
+                <li><a href="">THANK</a></li>
+                <li><a href="">YOU</a></li>
+                <li><a href="">FOR</a></li>
+                <li><a href="">ALL</a></li>
+                <li><a href="">YOUR </a></li>
+                <li><a href="">SUPPORT </a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="footbottom">
+        <p class="design">
+            Copyright &copy;2024; Designed by Tanisha 
+        </p>
+    </div>
+</footer>
+
+<div class="footer">
+    <div class="section">
+        <h4>ONLINE SHOPPING</h4>
+        <ul>
+            <li><a href="#">Men</a></li>
+            <li><a href="#">Women</a></li>
+            <li><a href="#">Kids</a></li>
+            <li><a href="#">Home & Living</a></li>
+            <li><a href="#">Beauty</a></li>
+            <li><a href="#">Gift Cards</a></li>
+            <li><a href="#">Myntra Insider</a></li>
+        </ul>
+    </div>
+    <div class="section">
+        <h4>USEFUL LINKS</h4>
+        <ul>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Site Map</a></li>
+            <li><a href="#">Corporate Information</a></li>
+            <li><a href="#">Whitehat</a></li>
+            <li><a href="#">Cleartrip</a></li>
+        </ul>
+    </div>
+    <div class="section">
+        <h4>CUSTOMER POLICIES</h4>
+        <ul>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">T&C</a></li>
+            <li><a href="#">Terms Of Use</a></li>
+            <li><a href="#">Track Orders</a></li>
+            <li><a href="#">Shipping</a></li>
+            <li><a href="#">Cancellation</a></li>
+            <li><a href="#">Returns</a></li>
+            <li><a href="#">Privacy policy</a></li>
+            <li><a href="#">Grievance Officer</a></li>
+        </ul>
+    </div>
+    <div class="section">
+        <h4>EXPERIENCE MYNTRA APP ON MOBILE</h4>
+    </div>
+    <div class="section">
+        <h4>KEEP IN TOUCH</h4>
+    </div>
+    <div class="footer-bottom">
+        <p>100% ORIGINAL guarantee for all products at myntra.com</p>
+        <p>Return within 14 days of receiving your order</p>
+        <p>POPULAR SEARCHES: Makeup, Dresses For Girls, T-Shirts, Sandals, Headphones, Babydolls, Blazers For Men, Handbags, Ladies Watches, Bags, Sport Shoes, Reebok Shoes, Puma Shoes, Boxers, Wallets, Tops, Earrings, Fastrack Watches, Kurtis, Nike, Smart Watches, Titan Watches, Designer Blouse, Gowns, Rings, Cricket Shoes, Forever 21, Eye Makeup, Photo Frames, Punjabi Suits, Bikini, Myntra Fashion Show, Lipstick, Saree, Watches, Dresses, Lehenga, Nike Shoes, Goggles, Bras, Suit, Chinos, Shoes, Adidas Shoes, Woodland Shoes, Jewellery, Designers Sarees</p>
+        <p>In case of any concern, <a href="#">Contact Us</a></p>
+        <p>© 2024 www.myntra.com. All rights reserved. A Flipkart company</p>
+        <p>Registered Office Address</p>
+    </div>
+</div>
+
+{% endblock %}
+
+
+
+
+
+
+

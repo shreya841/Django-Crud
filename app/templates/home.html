@@ -1,0 +1,753 @@
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<style>
+   body {
+            font-family: Arial, sans-serif;
+        }
+        html{
+            overflow-x: hidden;
+        }
+        .logo img{
+            height: 150px;
+            border-radius: 50%;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #b9b1b1;
+            padding: 10px;
+        }
+        .navbar a {
+            color: rgb(61, 10, 10);
+            padding: 14px 20px;
+            text-decoration: none;
+            text-align: center;
+        }
+        .navbar a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+        .navbar .logo img {
+            height: 40px;
+        }
+        .navbar .search-container {
+            display: flex;
+            gap: 40px;
+            align-items: center;
+        }
+        .navbar .search-container input[type=text] {
+            padding: 6px;
+            margin-right: 10px;
+            border: none;
+        }
+        .navbar .search-container button {
+            padding: 6px;
+            background: #ddd;
+            color: rgb(192, 183, 183);
+            border: none;
+            cursor: pointer;
+        }
+        .navbar .search-container button:hover {
+            background: #ccc;
+        }
+        .footer {
+            background-color: #f0e7e7;
+            color: rgb(14, 4, 4);
+            padding: 20px 10%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        .footer .section {
+            flex: 1;
+            margin: 10px;
+        }
+        .footer h4 {
+            border-bottom: 2px solid #444;
+            padding-bottom: 5px;
+            margin-bottom: 10px;
+        }
+        .footer ul {
+            list-style: none;
+            padding: 0;
+        }
+        .footer ul li {
+            margin: 5px 0;
+        }
+        .footer ul li a {
+            color: rgb(14, 11, 11);
+            text-decoration: none;
+        }
+        .footer ul li a:hover {
+            text-decoration: underline;
+        }
+        .footer .footer-bottom {
+            text-align: center;
+            margin-top: 20px;
+            border-top: 1px solid #444;
+            padding-top: 10px;
+        }
+        .navbar .search-container button:hover {
+            background-color: blue;
+        }
+      
+    .carousel {
+        position: relative;
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    .carousel-inner {
+        overflow: hidden;
+        width: 100%;
+        height: 500px;
+        position: relative;
+    }
+    .carousel-item {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        transition: transform 0.5s ease;
+        opacity: 0;
+    }
+    .carousel-item.active {
+        position: relative;
+        opacity: 1;
+    }
+    .carousel img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    .carousel-indicators {
+        position: absolute;
+        bottom: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+    .carousel-indicators li {
+        width: 10px;
+        height: 10px;
+        background-color: #ccc;
+        border-radius: 50%;
+        margin: 0 5px;
+        cursor: pointer;
+    }
+    .carousel-indicators .active {
+        background-color: #000;
+    }
+    .carousel-control-prev,
+    .carousel-control-next {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: rgba(0, 0, 0, 0.5);
+        color: white;
+        border: none;
+        font-size: 24px;
+        cursor: pointer;
+        z-index: 1000;
+    }
+    .carousel-control-prev {
+        left: 10px;
+    }
+    .carousel-control-next {
+        right: 10px;
+    }
+    .blue-stripe {
+      background-color: white; 
+    border-radius: 10px; 
+    padding: 40px; 
+        background-color: rgb(243, 243, 252);
+        box-shadow: 0 0 30px rgba(59, 54, 54, 0.5);
+        height: 300px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 20px;
+    }
+    .blue-stripe-slider {
+        width: 100%;
+       
+        position: relative;
+    }
+    .blue-stripe-slider-inner {
+        display: flex;
+        gap: 135px;
+        transition: transform 0.5s ease;
+    }
+    .blue-stripe-slider-item {
+        min-width: 10%;
+        border: 1px solid grey;
+        transition: transform 0.3s ease;
+       
+    }
+    .blue-stripe-slider-item:hover {
+  transform: scale(1.1); 
+}
+    .blue-stripe-slider img {
+        width: 200px;
+        height: 300px;
+        object-fit: cover;
+    }
+    .blue-stripe-control-prev,
+    .blue-stripe-control-next {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: rgba(0, 0, 0, 0.5);
+        color: white;
+        border: none;
+        font-size: 24px;
+        cursor: pointer;
+        z-index: 1000;
+    }
+    .blue-stripe-control-prev {
+        left: 10px;
+    }
+    .blue-stripe-control-next {
+        right: 10px;
+    }
+    .more{
+      background-color: white; 
+    border-radius: 10px; 
+        background-color: rgb(243, 243, 252);
+        box-shadow: 0 0 30px rgba(59, 54, 54, 0.5);
+        height: 500px;
+    }
+    .cont{
+
+    width: 90%;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+.products {
+ 
+
+  display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.product-card {
+
+
+    background-color: #f4f4f4;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px;
+    height: 400px;
+    width: 200px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.product-card img {
+  height: 300px;    
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 10px;
+}
+.product-card img {
+    max-width: 100%;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 10px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.product-card:hover img {
+    transform: scale(1.1);
+}
+
+.product-card h3 {
+    margin: 10px 0;
+}
+
+.product-card p {
+    font-size: 1.2em;
+    color: #333;
+}
+
+.product-card button {
+    background-color: #ff0000;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+.product-card button:hover {
+    background-color: #a80c0c;
+}
+
+.items{
+    background-color: white; 
+    border-radius: 10px; 
+        background-color: rgb(243, 243, 252);
+        box-shadow: 0 0 30px rgba(59, 54, 54, 0.5);
+        height: 500px;
+    }
+.sel{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  
+}
+.itm{
+    background-color: #f4f4f4;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px;
+    height: 400px;
+    width: 200px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.itm img {
+  height: 300px;    
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 10px;
+}
+.itm img {
+    max-width: 100%;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 10px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.itm:hover img {
+    transform: scale(1.1);
+}
+
+.itm h3 {
+    margin: 10px 0;
+}
+
+.itm p {
+    font-size: 1.2em;
+    color: #333;
+}
+
+.itm button {
+    background-color: #ff0000;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+.itm button:hover {
+    background-color: #a80c0c;
+}
+
+
+@media (max-width: 1200px) {
+        .product-card,
+        .itm {
+            width: 45%;
+        }
+    }
+    @media (max-width: 768px) {
+        .navbar .search-container {
+            display: block;
+        }
+        .navbar a {
+            display: block;
+            text-align: center;
+        }
+        .navbar .search-container input[type=text] {
+            margin: 10px 0;
+        }
+        .footer {
+            text-align: center;
+        }
+        .footer .section {
+            flex: 100%;
+            margin: 10px 0;
+        }
+        .products {
+            display: block;
+        }
+        .items {
+            display: block;
+        }
+        .product-card,
+        .itm {
+            width: 90%;
+            margin: 10px auto;
+        }
+    }
+    @media (max-width: 480px) {
+        .navbar {
+            flex-direction: column;
+        }
+        .navbar .logo img {
+            height: 30px;
+        }
+        .navbar .search-container {
+            display: flex;
+            flex-direction: column;
+        }
+        .navbar .search-container input[type=text] {
+            margin: 5px 0;
+        }
+    }
+    .footer {
+    background-color: #f0e7e7;
+    color: rgb(14, 4, 4);
+    padding: 20px 10%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.footer .section {
+    flex: 1;
+    margin: 10px;
+}
+
+.footer h4 {
+    border-bottom: 2px solid #444;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+}
+
+.footer ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer ul li {
+    margin: 5px 0;
+}
+
+.footer ul li a {
+    color: rgb(14, 11, 11);
+    text-decoration: none;
+}
+
+.footer ul li a:hover {
+    text-decoration: underline;
+}
+
+.footer .footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+    border-top: 1px solid #444;
+    padding-top: 10px;
+    flex: 1 100%;
+}
+
+@media (max-width: 768px) {
+    .footer {
+        text-align: center;
+    }
+    .footer .section {
+        flex: 100%;
+        margin: 10px 0;
+    }
+}
+
+</style>
+
+<div class="navbar">
+  <div class="logo">
+      <a href="/"><img src="https://img.freepik.com/premium-vector/cart-shop-logo-icon-design-shopping-cart-illustration-vector-template_487414-1143.jpg" alt="Logo" height="50%"></a>
+  </div>
+  <div class="nav-links">
+      <a href="{% url 'home' %}">Home</a>
+      <a href="{% url 'product' %}">Products</a>
+      <a href="{% url 'cart'%}">Cart</a>
+      <a href="{% url 'bout'}">About</a>
+     
+  </div>
+  <div class="search-container">
+      <form method="get">
+          <input type="text" placeholder="Search.." name="q">
+          <button type="submit">Search</button>
+      </form>
+  </div>
+  <div class="auth-links">
+      <i class="fa fa-heart" style="font-size:20px;"></i>
+
+      &nbsp; &nbsp;<a href="{% url 'registration' %}"><i class="fas fa-user-plus"></i> Register</a>
+      <a href="{% url 'login' %}"><i class="fas fa-sign-in-alt"></i> Login</a>
+  
+  </div>
+</div>
+
+
+
+<div id="mainSlider" class="carousel">
+    <ol class="carousel-indicators">
+        <li data-slide-to="0" class="active"></li>
+        <li data-slide-to="1"></li>
+        <li data-slide-to="2"></li>
+        <li data-slide-to="3"></li>
+        <li data-slide-to="4"></li>
+    </ol>
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="../static/images/1.jpg" alt="Slide 1">
+        </div>
+        <div class="carousel-item">
+            <img src="../static/images/5.jpg" alt="Slide 2">
+        </div>
+        <div class="carousel-item">
+            <img src="../static/images/4.jpg" alt="Slide 3" height="400px">
+        </div>
+        <div class="carousel-item">
+            <img src="../static/images/5.jpg" alt="Slide 4">
+        </div>
+       
+    </div>
+    <button class="carousel-control-prev" onclick="prevSlide()">❮</button>
+    <button class="carousel-control-next" onclick="nextSlide()">❯</button>
+</div>
+<br><br><br>
+
+<div class="blue-stripe">
+  <div id="blueStripeSlider" class="blue-stripe-slider">
+      <div class="blue-stripe-slider-inner">
+          <div class="blue-stripe-slider-item"><img src="https://rukminim2.flixcart.com/image/550/650/xif0q/dress/3/q/t/l-htdrss7133-honky-tonky-original-imagszfhfghhs2rp.jpeg?q=90&crop=true" alt="Photo 1"></div>
+          <div class="blue-stripe-slider-item"><img src="https://assets.vogue.com/photos/5d9c6b3a4ff6d1000896d5ba/master/w_2560%2Cc_limit/00009-Oscar-de-la-Renta-Bridal-Fall-2020.jpg" alt="Photo 2"></div>
+          <div class="blue-stripe-slider-item"><img src="https://5.imimg.com/data5/SELLER/Default/2022/7/BP/GY/CV/156647842/p-n-t-500x500.jpg" alt="Photo 3"></div>
+          <div class="blue-stripe-slider-item"><img src="https://5.imimg.com/data5/SELLER/Default/2022/7/BP/GY/CV/156647842/p-n-t-500x500.jpg" alt="Photo 3"></div>
+          <div class="blue-stripe-slider-item"><img src="https://img0.junaroad.com/uiproducts/17628261/zoom_0-1616756518.jpg" alt="Photo 3"></div>
+          <div class="blue-stripe-slider-item"><img src="https://5.imimg.com/data5/SELLER/Default/2022/7/BP/GY/CV/156647842/p-n-t-500x500.jpg" alt="Photo 3"></div>
+          <div class="blue-stripe-slider-item"><img src="https://5.imimg.com/data5/SELLER/Default/2022/7/BP/GY/CV/156647842/p-n-t-500x500.jpg" alt="Photo 3"></div>
+          <div class="blue-stripe-slider-item"><img src="https://qph.cf2.quoracdn.net/main-qimg-9d0a4c1e763ddfa6fea4b7efd3c80f83-lq" alt="Photo 3"></div>
+          <div class="blue-stripe-slider-item"><img src="https://5.imimg.com/data5/SELLER/Default/2022/7/BP/GY/CV/156647842/p-n-t-500x500.jpg" alt="Photo 3"></div>
+          <div class="blue-stripe-slider-item"><img src="https://5.imimg.com/data5/SELLER/Default/2022/7/BP/GY/CV/156647842/p-n-t-500x500.jpg" alt="Photo 3"></div>
+          <div class="blue-stripe-slider-item"><img src="https://5.imimg.com/data5/SELLER/Default/2022/7/BP/GY/CV/156647842/p-n-t-500x500.jpg" alt="Photo 3"></div>
+          <div class="blue-stripe-slider-item"><img src="https://5.imimg.com/data5/SELLER/Default/2022/7/BP/GY/CV/156647842/p-n-t-500x500.jpg" alt="Photo 3"></div>
+          <div class="blue-stripe-slider-item"><img src="https://5.imimg.com/data5/SELLER/Default/2022/7/BP/GY/CV/156647842/p-n-t-500x500.jpg" alt="Photo 3"></div>
+          <div class="blue-stripe-slider-item"><img src="https://5.imimg.com/data5/SELLER/Default/2022/7/BP/GY/CV/156647842/p-n-t-500x500.jpg" alt="Photo 3"></div>
+          <div class="blue-stripe-slider-item"><img src="https://5.imimg.com/data5/SELLER/Default/2022/7/BP/GY/CV/156647842/p-n-t-500x500.jpg" alt="Photo 3"></div>
+          <div class="blue-stripe-slider-item"><img src="https://5.imimg.com/data5/SELLER/Default/2022/7/BP/GY/CV/156647842/p-n-t-500x500.jpg" alt="Photo 3"></div>
+          <div class="blue-stripe-slider-item"><img src="https://5.imimg.com/data5/SELLER/Default/2022/7/BP/GY/CV/156647842/p-n-t-500x500.jpg" alt="Photo 3"></div>
+          <div class="blue-stripe-slider-item"><img src="https://5.imimg.com/data5/SELLER/Default/2022/7/BP/GY/CV/156647842/p-n-t-500x500.jpg" alt="Photo 3"></div>
+          <div class="blue-stripe-slider-item"><img src="https://5.imimg.com/data5/SELLER/Default/2022/7/BP/GY/CV/156647842/p-n-t-500x500.jpg" alt="Photo 3"></div>
+          
+        
+        
+        </div>
+
+
+
+
+
+
+
+
+      <button class="blue-stripe-control-prev" onclick="prevBlueStripeSlide()">❮</button>
+      <button class="blue-stripe-control-next" onclick="nextBlueStripeSlide()">❯</button>
+  </div>
+</div>
+
+
+  <div class="more">
+    
+    <h1>Grab More Items</h1>
+    <main class="cont">
+    
+      <div class="products">
+          <div class="product-card">
+           
+              <img src="https://assets.ajio.com/medias/sys_master/root/20220820/20no/62ffe2abf997dd394c08bf53/-473Wx593H-469219310-black-MODEL.jpg" alt="Product 1">
+              <h3>85% <span style="color: red;">OFF</span></h3>
+                            <button>Wishlist Now</button>
+          </div>
+          <div class="product-card">
+           
+            <img src="https://m.media-amazon.com/images/I/411ehS8PCwL._AC_UF1000,1000_QL80_.jpg" alt="" >
+            <h3>30% <span style="color: red;">OFF</span></h3>
+                          <button>Wishlist Now</button>
+        </div>
+        <div class="product-card">
+           
+          <img src="https://assetscdn1.paytm.com/images/catalog/product/S/SP/SPOSTRAUSS-LIGHKHEL193268394C4435/1612004599360_17.jpg" alt="" >
+          <h3>70% <span style="color: red;">OFF</span></h3>
+                        <button>Wishlist Now</button>
+      </div>
+      <div class="product-card">
+           
+        <img src="https://tiimg.tistatic.com/fp/1/007/630/-white-lace-ups-casual-sneakers-women-shoes-with-lightweight-comfortable-044.jpg" alt="">
+        <h3>50% <span style="color: red;">OFF</span></h3>
+                      <button>Wishlist Now</button>
+    </div>
+  
+    
+</div>
+
+
+<br><br>
+
+  <div class="items">
+    <div class="sel">
+        <div class="itm">
+   <img src="https://gubbworld.com/wp-content/uploads/2022/01/1-1.jpg" alt="">
+   <h3>50% <span style="color: red;">OFF</span></h3>
+                      <button>Wishlist Now</button>
+        </div>
+        
+        <div class="itm">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZyBCk6W5bkr4vA_SBhbv2LIAF650bbE0u9w&usqp=CAU" alt="">
+            <h3>50% <span style="color: red;">OFF</span></h3>
+            <button>Wishlist Now</button>
+        </div>
+
+         
+        <div class="itm">
+            <img src="https://qph.cf2.quoracdn.net/main-qimg-bc988e5988c67018a38e29c2f84f9a4b-pjlq" alt="">
+            <h3>50% <span style="color: red;">OFF</span></h3>
+            <button>Wishlist Now</button>
+        </div>
+         
+        <div class="itm">
+            <img src="https://m.media-amazon.com/images/I/61-n3mnch1L._AC_UF1000,1000_QL80_.jpg" alt="">
+            <h3>50% <span style="color: red;">OFF</span></h3>
+            <button>Wishlist Now</button>
+        </div>
+
+  
+    
+    </div>
+
+
+  </div>
+<br><br>
+<footer>
+
+  <div class="footer">
+    <div class="section">
+        <h4>ONLINE SHOPPING</h4>
+        <ul>
+        <li><a href="#">Men</a></li>
+        <li><a href="#">Women</a></li>
+        <li><a href="#">Kids</a></li>
+        <li><a href="#">Home & Living</a></li>
+        <li><a href="#">Beauty</a></li>
+        <li><a href="#">Gift Cards</a></li>
+        <li><a href="#">Myntra Insider</a></li>
+    </ul>
+</div>
+<div class="section">
+    <h4>USEFUL LINKS</h4>
+    <ul>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">Careers</a></li>
+        <li><a href="#">Site Map</a></li>
+        <li><a href="#">Corporate Information</a></li>
+        <li><a href="#">Whitehat</a></li>
+        <li><a href="#">Cleartrip</a></li>
+    </ul>
+</div>
+<div class="section">
+    <h4>CUSTOMER POLICIES</h4>
+    <ul>
+        <li><a href="#">Contact Us</a></li>
+        <li><a href="#">FAQ</a></li>
+        <li><a href="#">T&C</a></li>
+        <li><a href="#">Terms Of Use</a></li>
+        <li><a href="#">Track Orders</a></li>
+        <li><a href="#">Shipping</a></li>
+        <li><a href="#">Cancellation</a></li>
+        <li><a href="#">Returns</a></li>
+        <li><a href="#">Privacy policy</a></li>
+        <li><a href="#">Grievance Officer</a></li>
+    </ul>
+</div>
+<div class="section">
+    <h4>EXPERIENCE MYNTRA APP ON MOBILE</h4>
+</div>
+<div class="section">
+    <h4>KEEP IN TOUCH</h4>
+</div>
+<div class="footer-bottom">
+    <p>100% ORIGINAL guarantee for all products at myntra.com</p>
+    <p>Return within 14 days of receiving your order</p>
+    <p>POPULAR SEARCHES: Makeup, Dresses For Girls, T-Shirts, Sandals, Headphones, Babydolls, Blazers For Men, Handbags, Ladies Watches, Bags, Sport Shoes, Reebok Shoes, Puma Shoes, Boxers, Wallets, Tops, Earrings, Fastrack Watches, Kurtis, Nike, Smart Watches, Titan Watches, Designer Blouse, Gowns, Rings, Cricket Shoes, Forever 21, Eye Makeup, Photo Frames, Punjabi Suits, Bikini, Myntra Fashion Show, Lipstick, Saree, Watches, Dresses, Lehenga, Nike Shoes, Goggles, Bras, Suit, Chinos, Shoes, Adidas Shoes, Woodland Shoes, Jewellery, Designers Sarees</p>
+    <p>In case of any concern, <a href="#">Contact Us</a></p>
+    <p>© 2024 www.myntra.com. All rights reserved. A Flipkart company</p>
+    <p>Registered Office Address</p>
+</div>
+</div>
+</footer>
+<script>
+   let currentSlide = 0;
+    const slides = document.querySelectorAll('.carousel-item');
+    const indicators = document.querySelectorAll('.carousel-indicators li');
+
+    function showSlide(index) {
+        slides.forEach((slide, i) => {
+            slide.classList.remove('active');
+            if (i === index) {
+                slide.classList.add('active');
+            }
+        });
+        indicators.forEach((indicator, i) => {
+            indicator.classList.remove('active');
+            if (i === index) {
+                indicator.classList.add('active');
+            }
+        });
+    }
+
+    function nextSlide() {
+        currentSlide = (currentSlide + 1) % slides.length;
+        showSlide(currentSlide);
+    }
+
+    function prevSlide() {
+        currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+        showSlide(currentSlide);
+    }
+
+    indicators.forEach((indicator, index) => {
+        indicator.addEventListener('click', () => {
+            currentSlide = index;
+            showSlide(currentSlide);
+        });
+    });
+
+    // Auto slide
+    setInterval(nextSlide, 3000);
+
+    let currentBlueStripeSlide = 0;
+const blueStripeSlider = document.querySelector('.blue-stripe-slider-inner');
+const blueStripeItems = document.querySelectorAll('.blue-stripe-slider-item');
+
+function showBlueStripeSlide(index) {
+    const offset = index * -100; // Adjusted for 100% width per item
+    blueStripeSlider.style.transform = `translateX(${offset}%)`;
+}
+
+function nextBlueStripeSlide() {
+    currentBlueStripeSlide = (currentBlueStripeSlide + 1) % blueStripeItems.length;
+    showBlueStripeSlide(currentBlueStripeSlide);
+}
+
+function prevBlueStripeSlide() {
+    currentBlueStripeSlide = (currentBlueStripeSlide - 1 + blueStripeItems.length) % blueStripeItems.length;
+    showBlueStripeSlide(currentBlueStripeSlide);
+}
+
+</script>
+
+{% endblock %}

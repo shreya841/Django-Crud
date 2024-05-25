@@ -1,0 +1,288 @@
+{% extends 'base.html' %}
+{% block content %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>MY STORE</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Poppins", sans-serif;
+        }
+
+        body {
+            max-width: 100%;
+            align-items: center;
+            display: grid;
+        }
+
+        .navbar {
+            display: flex;
+            align-items: center;
+            padding: 20px;
+        }
+
+        nav {
+            flex: 1;
+            text-align: right;
+        }
+
+        nav ul {
+            display: inline-block;
+            list-style-type: none;
+        }
+
+        nav ul li {
+            display: inline-block;
+            margin-right: 20px;
+        }
+
+        a {
+            text-decoration: none;
+            color: black;
+        }
+
+        p {
+            color: black;
+        }
+
+        .container {
+            max-width: 100%;
+            margin: auto;
+            padding-left: 45px;
+            padding-right: 25px;
+        }
+
+        .row {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .c2 {
+            flex-basis: 50%;
+            min-width: 300px;
+        }
+
+        .c2 img {
+            width: 90%;
+            padding: 50px;
+        }
+
+        .c2 h1 {
+            font-size: 50px;
+            line-height: 60px;
+            margin: 35px 0;
+        }
+
+        .header {
+            background: radial-gradient(#fff, #ffd6d6);
+        }
+
+        .header .row {
+            margin-top: 70px;
+        }
+
+        .off {
+            background: radial-gradient(#fff, #ffd6d6);
+            margin-top: 80px;
+            padding: 30px 0;
+            width: 100%;
+            height: 100vh;
+        }
+
+        .c2 .off-img {
+            padding: 50px;
+        }
+
+        small {
+            display: grid;
+            color: #555;
+        }
+
+        .footer {
+            background-color: brown;
+        }
+
+        .foot {
+            width: 100%;
+            padding: 70px 30px 20px;
+        }
+
+        .icon {
+            display: flex;
+            justify-content: center;
+        }
+
+        .icon a {
+            text-decoration: none;
+            padding: 10px;
+            background-color: wheat;
+            margin: 10px;
+            border-radius: 50%;
+        }
+
+        .icon a i {
+            font-size: 2em;
+            color: black;
+            opacity: 0.9;
+        }
+
+        .icon a:hover {
+            background-color: #ff523b;
+            transition: 0.5s;
+        }
+
+        .icon a:hover i {
+            background-color: black;
+            transition: 0.5s;
+        }
+
+        .foot {
+            background: radial-gradient(#fff, #ffd6d6);
+        }
+
+        .footnav {
+            margin: 30px 0px;
+        }
+
+        .footnav ul {
+            display: flex;
+            justify-content: center;
+            list-style-type: none;
+        }
+
+        .footnav ul li a {
+            color: black;
+            margin: 20px;
+            text-decoration: none;
+            font-size: 1.3em;
+            opacity: 0.7;
+            transition: 0.5s;
+        }
+
+        .footnav ul li a:hover {
+            color: #ff523b;
+            opacity: 1;
+        }
+
+        .footbottom {
+            background: radial-gradient(#fff, #ffd6d6);
+            padding: 20px;
+            text-align: center;
+        }
+
+        .footbottom p {
+            color: black;
+        }
+
+        .design {
+            opacity: 0.7;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 400;
+            margin: 0px 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="row">
+		<div class="c2">
+			<h1>"BE BOLD"<br>"BE BEAUTIFUL"</h1>
+			<p>"Welcome to our women's accessories website, where sophistication meets versatility in every piece.
+                 Our collection is thoughtfully curated to cater to the diverse tastes and needs of today's modern woman. From chic scarves and stylish hats to elegant handbags and trendy sunglasses, we offer an extensive range of accessories to complement any outfit and occasion. 
+                Whether you're dressing up for a special event or adding flair to your everyday look, our carefully selected accessories are designed to empower you to make a statement with your style. With a focus on quality, affordability, and timeless appeal, we invite you to browse our website and discover the perfect finishing touches to express your individuality and elevate your fashion game."</p>
+			
+		</div>
+		<div class="c2">
+			<img src="https://www.aces.edu/wp-content/uploads/2021/11/GettyImages-875599880-scaled.jpg" alt="">
+		</div>
+	</div>
+</div>
+</div>
+
+
+
+<div class="off">
+	<div class="scont">
+		<div class="row">
+			<div class="c2">
+				<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2xBrHMHX3_IbNqkDa59O3LZAvuXQpNzQbnA&usqp=CAU" alt="">
+			</div>
+			<div class="c2">
+				<p>ALL TYPE OF ACCESSORIES EXCLUSIVELY AVAILABLE</p>
+			
+				<small>**Accessories for Women: Elevate Your Style**
+<br>
+                    When it comes to completing a chic ensemble, **women's accessories** play a crucial role. These delightful add-ons enhance your look, whether you're dressing up for a special occasion or simply stepping out for a casual day. Let's explore the world of women's accessories:
+                    <br>
+                    1. **Jewelry**: From chunky gold earrings to delicate necklaces, jewelry adds a touch of elegance. Layer necklaces for a trendy vibe or opt for statement earrings to make heads turn.
+                    <br>
+                    2. **Scarves and Gloves**: These versatile pieces not only keep you warm but also add flair to your outerwear. A colorful scarf or a pair of stylish gloves can transform a basic coat into a fashion statement.
+                    <br>
+                    3. **Headwear**: Hats, beanies, and headbands are both practical and fashionable. Shield yourself from the sun with a wide-brimmed hat or embrace a cozy beanie during colder months.
+                    <br>
+                    4. **Statement Socks**: Don't underestimate the power of socks! Playful patterns, lace details, or bold colors peeking out from your shoes can make a subtle yet impactful statement.
+                    <br>
+                    5. **Sunglasses**: Protect your eyes while looking effortlessly cool. Choose oversized frames, cat-eye shapes, or classic aviators to match your mood.
+                    <br>
+                    6. **Hair Accessories**: From hairpins to scrunchies, these little details can elevate your hairstyle. Experiment with different clips, headbands, and hair ties for a fresh look.
+                    <br>
+                   
+                </small>
+			<br>
+			<br>
+					
+			
+					</div>
+		</div>
+	</div>
+</div>
+
+
+
+
+<footer>
+	<div class="foot">
+		<div class="icon">
+			<a><i class="fa-brands fa-facebook"></i></a>
+			<a><i class="fa-brands fa-instagram"></i></a>
+			<a><i class="fa-brands fa-twitter"></i></a>
+			<a><i class="fa-brands fa-google-plus"></i></a>
+			<a><i class="fa-brands fa-youtube"></i></a>
+		</div>
+		<div class="footnav">
+			<ul>
+			<li><a href="">THANK</a></li>
+			<li><a href="">YOU</a></li>
+			<li><a href="">FOR</a></li>
+			<li><a href="">ALL</a></li>
+			<li><a href="">YOUR </a></li>
+			<li><a href="">SUPPORT </a></li>
+		</ul>
+		</div>
+	   
+	</div>
+	<div class="footbottom">
+		<p class="design">
+			Copyright &copy;2024; Designed by Tanisha 
+		</p>
+	</div>
+</footer>
+           
+
+{% endblock %}
+</body>
+</html>
